@@ -1,6 +1,6 @@
 "use client";
 import "reflect-metadata";
-import AsyncPageDynamic from "@/containers/async-page-dynamic";
+import AsyncPageDynamic from "@/pages/async-page-dynamic";
 
 export default function Home() {
   return <AsyncPageDynamic />;

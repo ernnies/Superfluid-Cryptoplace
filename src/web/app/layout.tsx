@@ -3,7 +3,7 @@ import "./globals.css";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-import AsyncLayoutDynamic from "@/containers/async-layout-dynamic";
+import AsyncLayoutDynamic from "@/pages/async-layout-dynamic";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
