@@ -1,7 +1,19 @@
-declare var mina:
-  | {
-      requestAccounts: () => Promise<string[]>;
-      getAccounts: () => Promise<string[]>;
-      on: (event: "accountsChanged", handler: (event: any) => void) => void;
-    }
-  | undefined;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.app{
+  min-height: 100vh;
+  color: white;
+  background: linear-gradient(#0b004e, #1d152f, #002834);
+}

@@ -1,46 +1,16 @@
-/** @type {import('next').NextConfig} */
-const webpack = require("webpack");
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
+import { BrowserRouter } from 'react-router-dom'
+import CoinContextProvider from './context/CoinContext.jsx'
 
-const nextConfig = {
-  reactStrictMode: false,
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
-          { key: "Cross-Origin-Embedder-Policy", value: "require-corp" },
-        ],
-      },
-    ];
-  },
-  webpack(config) {
-    config.experiments = { ...config.experiments, topLevelAwait: true };
-    config.resolve.fallback = {
-      fs: false,
-      tls: false,
-      net: false,
-      path: false,
-      zlib: false,
-      http: false,
-      https: false,
-      stream: false,
-      crypto: false,
-      worker_threads: false,
-      dns: false,
-      child_process: false,
-    };
-
-    config.plugins.push(
-      new webpack.NormalModuleReplacementPlugin(/^node:/, (resource) => {
-        resource.request = resource.request.replace(/^node:/, "");
-      }),
-    );
-
-    return config;
-  },
-  compress: false,
-  output: "standalone"
-};
-
-module.exports = nextConfig;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <CoinContextProvider>
+        <App />
+      </CoinContextProvider>
+    </BrowserRouter>
+  </React.StrictMode>,
+)

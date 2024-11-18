@@ -1,36 +1,20 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+import Navbar from "./components/Navbar/Navbar"
+import { Routes, Route } from "react-router-dom"
+import Home from './pages/Home/Home'
+import Coin from './pages/Coin/Coin'
+import Footer from "./components/Footer/Footer"
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
+const App = () => {
+  return (
+    <div className="app">
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/coin/:coinId' element={<Coin/>}/>
+      </Routes>
+      <Footer />
+    </div>
+  )
+}
 
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
-.env*.local
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+export default App
