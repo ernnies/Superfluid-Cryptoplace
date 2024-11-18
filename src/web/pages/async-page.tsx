@@ -1,7 +1,7 @@
 "use client";
 import { Faucet } from "@/components/faucet";
-import { useFaucet } from "@/lib/stores/balances";
-import { useWalletStore } from "@/lib/stores/wallet";
+import { useFaucet } from "@/context/stores/balances";
+import { useWalletStore } from "@/context/stores/wallet";
 
 export default function Home() {
   const wallet = useWalletStore();
